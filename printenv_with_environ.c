@@ -8,12 +8,14 @@
  */
 int main(void)
 {
-	char **env = environ;
+	char **environ = NULL;
 
-	while (*env != NULL)
+	int i = 0;
+
+	while (environ[1] != NULL)
 	{
-		printf("%s\n", *env);
-		env++;
+		printf("%s\n", environ[i]);
+		i++;
 	}
 
 	return (0);
