@@ -16,7 +16,7 @@ void free_data(data_shell *datash)
 	}
 
 	free(datash->_environ);
-	free(datah->pid);
+	free(datash->pid);
 }
 
 /**
@@ -63,7 +63,7 @@ int main(int ac, char **av)
 	data_shell datash;
 	(void) ac;
 
-	signal(SIGINT, get_signint);
+	signal(SIGINT, get_sigint);
 	set_data(&datash, av);
 	shell_loop(&datash);
 	free_data(&datash);

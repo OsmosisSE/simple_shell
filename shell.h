@@ -99,5 +99,11 @@ int main(int ac, char **av);
 char *without_comment(char *in);
 void shell_loop(data_shell *datash);
 
+/* hv_shell_input_utilities.c */
+char *read_line(int *i_eof);
+void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
+ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
+void get_sigint(int sig);
+int get_help(data_shell *datash);
 
-#endif _SHELL_H_
+#endif /* _SHELL_H_ */
