@@ -106,4 +106,16 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
 void get_sigint(int sig);
 int get_help(data_shell *datash);
 
+/* hv_help_function.c */
+void hv_help_general(void);
+void hv_help_setenv(void);
+void hv_help_env(void);
+void hv_help_unsetenv(void);
+
+/* hv_help_function2.c */
+void hv_help(void);
+void hv_help_exit(void);
+void hv_help_cd(void);
+void hv_help_alias(void);
+
 #endif /* _SHELL_H_ */
