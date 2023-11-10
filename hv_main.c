@@ -85,7 +85,7 @@ char *without_comment(char *in)
 {
 	int i, up_to;
 
-	upto_to = 0;
+	up_to = 0;
 	for (i = 0; in[i]; i++)
 	{
 		if (in[i] == '#')
