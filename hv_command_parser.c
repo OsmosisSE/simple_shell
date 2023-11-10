@@ -12,7 +12,7 @@ char *swap_char(char *input, int bool)
 
 	if (bool == 0)
 	{
-		for (i = 0; input[i]; ++)
+		for (i = 0; input[i]; i++)
 		{
 			if (input[i] == '|')
 			{
@@ -46,11 +46,11 @@ char *swap_char(char *input, int bool)
  * add_nodes - Adds separators and command lines to the lists.
  *
  * @head_s: Head of separator list.
- * @head_1: Head of command lines list.
+ * @head_l: Head of command lines list.
  * @input: Input string.
  * Return: No return.
  */
-void add_notes(sep_list **head_s, line_list **head_l, char *input)
+void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 {
 	int i;
 	char *line;
@@ -74,7 +74,7 @@ void add_notes(sep_list **head_s, line_list **head_l, char *input)
 		line = swap_char(line, 1);
 		add_line_node_end(head_l, line);
 		line = _strtok(NULL, ";|&")
-	} while (line != NULL):
+	} while (line != NULL);
 }
 
 /**
@@ -93,7 +93,7 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 
 	loop_sep = 1;
 	ls_s = *list_s;
-	ls_l = *list_1;
+	ls_l = *list_l;
 
 	while (ls_s != NULL && loop_sep)
 	{
