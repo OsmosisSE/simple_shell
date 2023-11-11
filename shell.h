@@ -131,4 +131,20 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data);
 char *replaced_input(r_var **head, char *input, char *new_input, int nlen);
 char *rep_var(char *input, data_shell *datash);
 
+/* hv_executor.c */
+int exec_line(data_shell *datash);
+int (*get_builtin(char *cmd))(data_shell *);
+int get_error(data_shell *datash, int eval);
+int exit_shell(data_shell *datash);
+
+/* error_messages1.c */
+char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str);
+char *error_get_cd(data_shell *datash);
+char *error_not_found(data_shell *datash);
+
+/* error_messages2.c */
+char *error_exit_shell(data_shell *datash);
+char *error_env(data_shell *datash);
+char *error_path_126(data_shell *datash);
+
 #endif /* _SHELL_H_ */

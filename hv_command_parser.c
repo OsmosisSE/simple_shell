@@ -109,7 +109,7 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 	}
 
 	*list_s = ls_s;
-	*list_1 = ls_l;
+	*list_l = ls_l;
 }
 
 /**
