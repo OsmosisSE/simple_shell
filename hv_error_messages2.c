@@ -41,6 +41,7 @@ char *error_exit_shell(data_shell *datash)
  * Return: Error message.
  */
 char *error_env(data_shell *datash)
+{
 	int length;
 	char *error;
 	char *ver_str;
@@ -76,7 +77,7 @@ char *error_env(data_shell *datash)
  * Return: The error string.
  */
 char *error_path_126(data_shell *datash)
-	{
+{
 	int length;
 	char *ver_str;
 	char *error;
