@@ -152,10 +152,20 @@ sep_list *add_sep_node_end(sep_list **head, char sep);
 line_list *add_line_node_end(line_list **head, char *line);
 r_var *add_rvar_node(r_var **head, int lvar, char *val, int lval);
 
-/*hv_list_operations2.c */
+/* hv_list_operations2.c */
 void free_sep_list(sep_list **head);
 void free_line_list(line_list **head);
 void free_rvar_list(r_var **head);
+
+/* hv_memory_operations.c */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
+void _memcpy(void *newptr, const void *ptr, unsigned int size);
+
+/* hv_conversion_operations.c */
+int get_len(int n);
+char *hv_itoa(int n);
+int _atoi(char *s);
 
 
 #endif /* _SHELL_H_ */
