@@ -167,5 +167,22 @@ int get_len(int n);
 char *hv_itoa(int n);
 int _atoi(char *s);
 
+/* hv_string_operations1.c */
+char *_strcat(char *dest, const char *src);
+char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
+char *_strchr(char *s, char c);
+
+/* hv_string_operations2.c */
+int _strspn(char *s, char *accept);
+char *_strdup(const char *s);
+int _strlen(const char *s);
+int cmp_chars(char str[], const char *delim);
+
+/* hv_string_operations3.c */
+char *_strtok(char str[], const char *delim);
+int _isdigit(const char *s);
+void rev_string(char *s);
+
 
 #endif /* _SHELL_H_ */
