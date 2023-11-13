@@ -8,7 +8,7 @@
  */
 char *error_exit_shell(data_shell *datash)
 {
-	int lenght;
+	int length;
 	char *error;
 	char *ver_str;
 

@@ -69,11 +69,11 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 		}
 	}
 
-	line = _strtok(input. ";|&");
+	line = _strtok(input, ";|&");
 	do {
 		line = swap_char(line, 1);
 		add_line_node_end(head_l, line);
-		line = _strtok(NULL, ";|&")
+		line = _strtok(NULL, ";|&");
 	} while (line != NULL);
 }
 
@@ -179,7 +179,7 @@ char **split_line(char *input)
 	}
 
 	token = _strtok(input, TOK_DELIM);
-	tokens[0] - token;
+	tokens[0] = token;
 
 	for (i = 1; token != NULL; i++)
 	{
