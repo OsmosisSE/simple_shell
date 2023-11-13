@@ -137,14 +137,25 @@ int (*get_builtin(char *cmd))(data_shell *);
 int get_error(data_shell *datash, int eval);
 int exit_shell(data_shell *datash);
 
-/* error_messages1.c */
+/* hv_error_messages1.c */
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str);
 char *error_get_cd(data_shell *datash);
 char *error_not_found(data_shell *datash);
 
-/* error_messages2.c */
+/* hv_error_messages2.c */
 char *error_exit_shell(data_shell *datash);
 char *error_env(data_shell *datash);
 char *error_path_126(data_shell *datash);
+
+/* hv_list_opearations1.c */
+sep_list *add_sep_node_end(sep_list **head, char sep);
+line_list *add_line_node_end(line_list **head, char *line);
+r_var *add_rvar_node(r_var **head, int lvar, char *val, int lval);
+
+/*hv_list_operations2.c */
+void free_sep_list(sep_list **head);
+void free_line_list(line_list **head);
+void free_rvar_list(r_var **head);
+
 
 #endif /* _SHELL_H_ */
