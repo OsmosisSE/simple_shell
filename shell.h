@@ -184,5 +184,16 @@ char *_strtok(char str[], const char *delim);
 int _isdigit(const char *s);
 void rev_string(char *s);
 
+/* hv_env_operations1.c */
+char *copy_info(char *name, char *value);
+char *_getenv(const char *name, char **_environ);
+void set_env(char *name, char *value, data_shell *datash);
+
+/* hv_env_opearations2.c */
+int _env(data_shell *datash);
+int _setenv(data_shell *datash);
+int _unsetenv(data_shell *datash);
+int cmp_env_name(const char *nenv, const char *name);
+
 
 #endif /* _SHELL_H_ */
