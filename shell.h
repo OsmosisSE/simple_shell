@@ -195,5 +195,12 @@ int _setenv(data_shell *datash);
 int _unsetenv(data_shell *datash);
 int cmp_env_name(const char *nenv, const char *name);
 
+/* hv_syntax_check.c */
+int repeated_char(char *input, int i);
+int error_sep_op(char *input, int i, char last);
+int first_char(char *input, int *i);
+void print_syntax_error(data_shell *datash, char *input, int i, int bool);
+int check_syntax_error(data_shell *datash, char *input);
+
 
 #endif /* _SHELL_H_ */
