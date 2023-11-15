@@ -107,7 +107,7 @@ void cd_to(data_shell *datash)
 	if (chdir(dir) == -1)
 	{
 		get_error(datash, 2);
-		return ();
+		return;
 	}
 
 	cp_pwd = _strdup(pwd);
