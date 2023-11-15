@@ -26,7 +26,7 @@ char *_strtok(char str[], const char *delim)
 
 	for (bool = 0; *splitted; splitted++)
 	{
-		if (spitted != str_start)
+		if (splitted != str_start)
 			if (*splitted && *(splitted - 1) == '\0')
 				break;
 

@@ -202,5 +202,12 @@ int first_char(char *input, int *i);
 void print_syntax_error(data_shell *datash, char *input, int i, int bool);
 int check_syntax_error(data_shell *datash, char *input);
 
+/* hv_cd_commands.c */
+int cd_shell(data_shell *datash);
+void cd_dot(data_shell *datash);
+void cd_to(data_shell *datash);
+void cd_previous(data_shell *datash);
+void cd_to_home(data_shell *datash);
+
 
 #endif /* _SHELL_H_ */
