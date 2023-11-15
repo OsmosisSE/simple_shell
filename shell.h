@@ -131,11 +131,18 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data);
 char *replaced_input(r_var **head, char *input, char *new_input, int nlen);
 char *rep_var(char *input, data_shell *datash);
 
-/* hv_executor.c */
+/* hv_command_executor1.c */
 int exec_line(data_shell *datash);
 int (*get_builtin(char *cmd))(data_shell *);
 int get_error(data_shell *datash, int eval);
 int exit_shell(data_shell *datash);
+
+/* hv_command_executor2.c */
+int is_cdir(char *path, int *i);
+char *_which(char *cmd, char **_environ);
+int is_executable(data_shell *datash);
+int check_error_cmd(char *dir, data_shell *datash);
+int cmd_exec(data_shell *datash);
 
 /* hv_error_messages1.c */
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str);
