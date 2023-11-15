@@ -99,12 +99,18 @@ int main(int ac, char **av);
 char *without_comment(char *in);
 void shell_loop(data_shell *datash);
 
-/* hv_shell_input_utilities.c */
+/* read_line.c */
 char *read_line(int *i_eof);
+
+/* get_sigint.c */
+void get_sigint(int sig);
+
+/* get_help.c */
+int get_help(data_shell *datash);
+
+/* hv_shell_input_utilities.c */
 void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
 ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
-void get_sigint(int sig);
-int get_help(data_shell *datash);
 
 /* hv_help_function.c */
 void hv_help_general(void);

@@ -1,23 +1,6 @@
 #include "shell.h"
 
 /**
- * read_line - Reads and retrieves user input from stdin.
- *
- * @i_eof: A pointer to store the return value of getline function.
- *
- * Return: A pointer to the input string read from the user.
- */
-char *read_line(int *i_eof)
-{
-	char *input = NULL;
-	size_t bufsize = 0;
-
-	*i_eof = getline(&input, &bufsize, stdin);
-
-	return (input);
-}
-
-/**
  * bring_line - Assigns the line variable for get_line
  * @lineptr: Pointer to the buffer that stores the input string.
  * @buffer: string that is being copied to lineptr.
@@ -108,52 +91,3 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 	return (retval);
 }
 
-/**
- * get_sigint - Signal handler for Ctrl+C (SIGINT)
- * @sig: The signal number to be handled (ignored).
- *
- * This function handles the Ctrl+C (SIGINT) signal when it is sent to the
- * shell process. It ensures that a newline is printed, and the prompt is
- * displayed again, allowing the user to continue entering commands.
- */
-void get_sigint(int sig)
-{
-	(void)sig;
-	write(STDOUT_FILENO, "\n^-^ ", 5);
-}
-
-/**
- * get_help - Retrieve help messages for built-in commands.
- * @datash: Data structure contatining args and input
- * Return: Always return 1.
- *
- * This function retrieves and displays help messages based on the built-in
- * command specified in the arguments (args[1]). If no specific built-in
- * command is specified, it provides a general help message. It also sets
- * the shell's status to 0, indicating successful execution.
- */
-int get_help(data_shell *datash)
-{
-	if (datash->args[1] == 0)
-		hv_help_general();
-	else if (_strcmp(datash->args[1], "setenv") == 0)
-		hv_help_setenv();
-	else if (_strcmp(datash->args[1], "env") == 0)
-		hv_help_env();
-	else if (_strcmp(datash->args[1], "unsetenv") == 0)
-		hv_help_unsetenv();
-	else if (_strcmp(datash->args[1], "help") == 0)
-		hv_help();
-	else if (_strcmp(datash->args[1], "exit") == 0)
-		hv_help_exit();
-	else if (_strcmp(datash->args[1], "cd") == 0)
-		hv_help_cd();
-	else if (_strcmp(datash->args[1], "alias") == 0)
-		hv_help_alias();
-	else
-		write(STDERR_FILENO, datash->args[0],
-				-strlen(datash->args[0]));
-
-	datash->status = 0;
-	return (1);
-}
