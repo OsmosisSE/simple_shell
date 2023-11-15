@@ -14,7 +14,7 @@ sep_list *add_sep_node_end(sep_list **head, char sep)
 	if (new == NULL)
 		return (NULL);
 
-	new->sepeartor = sep;
+	new->separator = sep;
 	new->next = NULL;
 	temp = *head;
 
@@ -80,7 +80,7 @@ r_var *add_rvar_node(r_var **head, int lvar, char *val, int lval)
 	if (new == NULL)
 		return (NULL);
 
-	new->len_var = lval;
+	new->len_var = lvar;
 	new->val = val;
 	new->len_val = lval;
 

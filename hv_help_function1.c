@@ -32,7 +32,7 @@ void hv_help_setenv(void)
 	char *help = "setenv: setenv (const char *name, const char *value,";
 
 	write(STDOUT_FILENO, help, _strlen(help));
-	help = "int replace)\n\t;
+	help = "int replace)\n\t";
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "Add a new definition to the environment.\n";
 	write(STDOUT_FILENO, help, _strlen(help));

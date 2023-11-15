@@ -13,7 +13,7 @@ void free_sep_list(sep_list **head)
 	if (head != NULL)
 	{
 		curr = *head;
-		while ((temp == curr) != NULL)
+		while ((temp = curr) != NULL)
 		{
 			curr = curr->next;
 			free(temp);
@@ -35,7 +35,7 @@ void free_line_list(line_list **head)
 	if (head != NULL)
 	{
 		curr = *head;
-		while ((temp == curr) != NULL)
+		while ((temp = curr) != NULL)
 		{
 			curr = curr->next;
 			free(temp);
