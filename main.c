@@ -96,7 +96,7 @@ char *without_comment(char *in)
 				return (NULL);
 			}
 
-			if (in[i -1] == ' ' || in[i - 1] == '\t' || in[i -1] == ';')
+			if (in[i - 1] == ' ' || in[i - 1] == '\t' || in[i - 1] == ';')
 				up_to = i;
 		}
 	}
